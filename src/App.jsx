@@ -4,6 +4,7 @@ import axios from "axios";
 import InfoCard from "./InfoCard";
 import Table from "./Table";
 import { SortedData } from "./SortedData.js";
+import { FormControl, Select } from "@material-ui/core";
 
 function App() {
 
@@ -75,13 +76,13 @@ function App() {
               <div className="flex items-center">
                 <img className="object-cover  w-12 h-10 mr-2 shadow-md shadow-black" src={flagUrl} />
                 <div>
-                  <select onChange={onCountryChange} value={country}
-                    className="bg-gray-200 z-20 p-3 outline-blue-700">
-                      <option value="worldwide">worldwide</option>
-                    {countries.map((country) => <option key={country.name} value={country.value}>
+                  <FormControl onChange={onCountryChange} value={country}
+                    className="bg-gray-200 ">
+                      <Select value="worldwide">worldwide</Select>
+                    {countries.map((country) => <Select key={country.name} value={country.value}>
                       {country.name}
-                      </option>)}
-                    </select>
+                      </Select>)}
+                    </FormControl>
                 </div>
               </div>
             </div>
